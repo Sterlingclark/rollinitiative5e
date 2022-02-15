@@ -11,7 +11,7 @@
 
 define("DB_SERVER", "localhost");
 define("DB_USER", "uh5sgai2pnkjp");
-define("DB_PASS", "Micro94!");
+define("DB_PASS", "4@Gb%%>@5I@#");
 define("DB_NAME", "dbvvmrwkicvyts");
 
 

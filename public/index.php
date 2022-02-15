@@ -1,5 +1,5 @@
 <?php 
-require_once('../private/initialize.php');
+require_once('../private/initialize');
 include(SHARED_PATH . '/header.php'); 
 ?>
 
@@ -11,7 +11,6 @@ include(SHARED_PATH . '/header.php');
 
 <a href="../public/members/new.php">Become a Member</a></p>
 
-<?php   ?>
 
 
 <?php include(SHARED_PATH . '/footer.php'); ?>
