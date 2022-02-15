@@ -2,8 +2,8 @@
 
 class Member extends DatabaseObject {
 
-  static protected $table_name = "members";
-  static protected $db_columns = ['id', 'first_name', 'last_name', 'user_level', 'email', 'username', 'hashed_password'];
+  static protected $table_name = "member";
+  static protected $db_columns = ['member_id', 'character_id', 'member_first_name', 'member_last_name', 'user_level', 'email', 'username', 'hashed_password'];
 
   public $id;
   public $first_name;
@@ -17,8 +17,8 @@ class Member extends DatabaseObject {
   protected $password_required = true;
 
   public function __construct($args=[]) {
-    $this->first_name = $args['first_name'] ?? '';
-    $this->last_name = $args['last_name'] ?? '';
+    $this->first_name = $args['member_first_name'] ?? '';
+    $this->last_name = $args['member_last_name'] ?? '';
     $this->user_level = $args['user_level'] ?? 'm';
     $this->email = $args['email'] ?? '';
     $this->username = $args['username'] ?? '';
@@ -40,7 +40,7 @@ public function verify_password($password) {
 
 public function member_or_admin($member) {
   if ($member->user_level == 'm') {
-    redirect_to(url_for('/birds/index.php'));
+    redirect_to(url_for('/public/index.php'));
   } elseif ($member->user_level == 'a') {
     redirect_to(url_for('/admin/index.php'));
   } else {
